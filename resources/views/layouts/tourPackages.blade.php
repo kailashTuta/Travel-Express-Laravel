@@ -1,12 +1,13 @@
 <div class="container-fluid">
-    <h3 id="PackageHeading">Available Packages</h3>
+    <h3 id="PackageHeading">Premium Packages</h3>
     <div class="border"></div>
     <div class="row">
         <div class="col-md-3">
             <div class="single-content">
                 <img src="images/package-images/img-1.jpg">
                 <div class="text-content">
-                    <h4>Silver Package</h4>
+                    <h4>Bali Package</h4>
+                    <p><a class="btn btn-info">Know More</a></p>
                 </div>
             </div>
         </div>
@@ -14,7 +15,8 @@
             <div class="single-content">
                 <img src="images/package-images/img-2.jpg">
                 <div class="text-content">
-                    <h4>Gold Package</h4>
+                    <h4>Alps Package</h4>
+                    <p><a class="btn btn-info">Know More</a></p>
                 </div>
             </div>
         </div>
@@ -22,7 +24,8 @@
             <div class="single-content">
                 <img src="images/package-images/img-3.jpg">
                 <div class="text-content">
-                    <h4>Diamond Package</h4>
+                    <h4>Sydney Package</h4>
+                    <p><a class="btn btn-info">Know More</a></p>
                 </div>
             </div>
         </div>
@@ -30,7 +33,8 @@
             <div class="single-content">
                 <img src="images/package-images/img-4.jpg">
                 <div class="text-content">
-                    <h4>Platinum Package</h4>
+                    <h4>Singapoor Package</h4>
+                    <p><a class="btn btn-info">Know More</a></p>
                 </div>
             </div>
         </div>

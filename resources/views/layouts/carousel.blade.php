@@ -16,10 +16,17 @@
         <div class="carousel-item">
             <div class="overlay"></div>
             <img src="images/carousel-images/img-2.jpg" class="d-block w-100 h-100" alt="Second Slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="animate__animated animate__fadeInUp font-weight-normal">Better Prices Exceptional People.
+                </h2>
+            </div>
         </div>
         <div class="carousel-item">
             <div class="overlay"></div>
             <img src="images/carousel-images/img-3.jpg" class="d-block w-100 h-100" alt="Third Slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 class="animate__animated animate__fadeInUp font-weight-normal">One Agency Many Worlds.</h2>
+            </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
