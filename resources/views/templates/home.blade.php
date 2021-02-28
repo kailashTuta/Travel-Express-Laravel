@@ -8,6 +8,6 @@
     @include('layouts.navbar')
     @include('layouts.carousel')
     @include('layouts.tourPackages')
-    @include('layouts.tours')
+    @include('layouts.testimonials')
     @include('layouts.footer')
 @endsection

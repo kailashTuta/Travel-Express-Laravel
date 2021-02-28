@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <h3 id="PackageHeading">Premium Packages</h3>
+<div class="container-fluid" id="premiumPackage">
+    <h1>Premium Packages</h1>
     <div class="border"></div>
     <div class="row">
         <div class="col-md-3">

@@ -19,7 +19,7 @@
             <div class="col-md-3 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">Travel Express</h6>
                 <hr class="bg-info mb-4 mt-0 d-inline-block mx-auto">
-                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quisquam
+                <p class="mt-2 text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quisquam
                     qui a corrupti asperiores ea nam quo velit rem, nulla placeat voluptatem eveniet facilis
                     repudiandae?</p>
             </div>
@@ -30,8 +30,8 @@
                 <ul class="list-unstyled">
                     <li class="my-2"><a class="text-white" href="/">Home</a></li>
                     <li class="my-2"><a class="text-white" href="/gallery">Gallery</a></li>
-                    <li class="my-2"><a class="text-white" href="#">Premium Packages</a></li>
-                    <li class="my-2"><a class="text-white" href="#">Holiday Packages</a></li>
+                    <li class="my-2"><a class="text-white" href="#premiumPackage">Premium Packages</a></li>
+                    <li class="my-2"><a class="text-white" href="#testimonials">Testimonials</a></li>
                 </ul>
             </div>
 
