@@ -31,6 +31,14 @@ a {
     content: none;
 }
 
+.dropdown-menu {
+    min-width: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    white-space: normal;
+}
+
 #premiumPackage>h1 {
     text-transform: uppercase;
     text-align: center;
