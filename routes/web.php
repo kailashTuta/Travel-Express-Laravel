@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/gallery', function () {
     return view('layouts.gallery');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

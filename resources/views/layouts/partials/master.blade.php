@@ -22,11 +22,11 @@
         crossorigin="anonymous" />
 
     {{-- CSS --}}
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     {{-- JavaScript --}}
-    <script src="js/script.js" type="text/javascript"></script>
+    <script src="{{ URL::asset('/js/script.js') }}" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
