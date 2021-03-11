@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -32,8 +33,8 @@ class UserController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $users = User::where('name','LIKE','%'.$search.'%')->get();
-        return view('layouts.admin.adminDashboard',compact('users'));
+        $users = User::where('name', 'LIKE', '%' . $search . '%')->get();
+        return view('layouts.admin.adminDashboard', compact('users'));
     }
 
     /**
@@ -44,7 +45,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'fname' => 'required',
+            'lname' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'role_as' => 'required',
+            'password' => 'required',
+        ]);
+
+        $password = Hash::make($request->input('password'));
+
+        $users = new User;
+        $users->fname = $request->input('fname');
+        $users->lname = $request->input('lname');
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->role_as = $request->input('role_as');
+        $users->password = $password;
+
+        $users->save();
+
+        return redirect('/admin')->with('success', 'User Added');
     }
 
     /**

@@ -19,11 +19,14 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-2">
+                        @include('layouts.admin.addUsers')
+                    </div>
+                    <div class="col-md-4 offset-6">
                         <form action="/search" method="get">
                             <div class="input-group mb-3">
-                                <input type="search" class="form-control form-control-lg" name="search"
-                                    placeholder="Search">
+                                <input type="search" class="form-control form-control-lg" name="search" placeholder="Search"
+                                    autocomplete="off">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-info" type="button"><i
                                             class="fas fa-search"></i></button>
