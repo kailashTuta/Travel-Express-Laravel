@@ -25,21 +25,23 @@
                         Account
                         <span><i class="fas fa-chevron-circle-down"></i></span>
                     </a>
-                <div class="dropdown-menu bg-dark" aria-labelledby="dropdown_target">
-                    @if (Route::has('login'))       
-                        <a class="dropdown-item text-info" href="{{ route('login') }}">{{ __('Login') }}</a>     
-                    @endif
-                    <div class="dropdown-divider"></div>
-                     @if (Route::has('register'))
-                        <a class="dropdown-item text-info" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    @endif
+                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdown_target">
+                        @if (Route::has('login'))
+                            <a class="dropdown-item text-info" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        @endif
+                        <div class="dropdown-divider"></div>
+                        @if (Route::has('register'))
+                            <a class="dropdown-item text-info" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        @endif
                     @else
 
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <span><i class="fas fa-user-circle"></i> {{ Auth::user()->name }}</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-info" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -47,7 +49,7 @@
                                 @csrf
                             </form>
                         </div>
-                @endguest
+                    @endguest
                 </div>
             </li>
         </ul>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,10 @@ Route::get('/gallery', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth', 'isAdmin']], function () {
+    Route::view('admin', 'layouts.admin.adminDashboard');
+    Route::resource('/admin/user', 'App\Http\Controllers\UserController');
+    Route::get('/search', 'App\Http\Controllers\UserController@search');
+    Route::redirect('/admin', '/admin/user');
+});
