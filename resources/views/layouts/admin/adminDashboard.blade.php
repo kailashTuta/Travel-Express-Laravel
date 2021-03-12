@@ -64,7 +64,12 @@
                                                 @include('layouts.admin.editUser')
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                                <form method="POST" action="/admin/user/{{ $user->id }}">
+                                                    @csrf
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
