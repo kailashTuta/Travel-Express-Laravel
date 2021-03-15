@@ -14,7 +14,7 @@
                         class="list-group-item list-group-item-action list-group-item-info active">Users</a>
                     <a href="/admin/tour" class="list-group-item list-group-item-action list-group-item-info">Tours</a>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-info">Packages</a>
-                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">Account</a>
+                    <a href="/admin/profile" class="list-group-item list-group-item-action list-group-item-info">Account</a>
                 </div>
             </div>
             <div class="col-md-9">

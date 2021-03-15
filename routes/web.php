@@ -28,5 +28,8 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::view('admin', 'layouts.admin.adminDashboard');
     Route::resource('/admin/user', 'App\Http\Controllers\UserController');
     Route::get('/search', 'App\Http\Controllers\UserController@search');
+
+    Route::get('/admin/profile', 'App\Http\Controllers\AdminProfileController@myProfile');
+    Route::post('/admin/profile-update', 'App\Http\Controllers\AdminProfileController@profileUpdate');
     Route::redirect('/admin', '/admin/user');
 });

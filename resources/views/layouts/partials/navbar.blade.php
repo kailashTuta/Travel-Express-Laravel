@@ -40,6 +40,8 @@
                             <span><i class="fas fa-user-circle"></i> {{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-info" href="{{ url('/admin/profile') }}">Profile</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-info" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
