@@ -299,8 +299,8 @@ blockquote::after {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #000;
-    left:auto;
-    right:auto;
+    left: auto;
+    right: auto;
 }
 
 #registrationForm {
@@ -313,3 +313,16 @@ blockquote::after {
     }
 }
 
+label.file-upload input[type="file"] {
+    position: absolute;
+    top: -1000px;
+    /* overflow: hidden; */
+}
+
+.file-upload {
+    background: #4BC0D9;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 45px;
+}

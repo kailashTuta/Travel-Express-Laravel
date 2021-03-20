@@ -27,9 +27,20 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{{ asset('uploads/profile/' . Auth::user()->image) }}" class="w-50 ml-5"
-                                        alt=""> 
-                                    <input type="file" name="image">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="{{ asset('uploads/profile/' . Auth::user()->image) }}"
+                                                class="w-50 ml-5" alt="profile-image">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="file-upload p-2">
+                                                <input type="file" name="image">
+                                                <span>Choose a Image</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-9">
                                     <div class="row">
