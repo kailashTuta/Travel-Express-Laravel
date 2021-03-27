@@ -37,7 +37,12 @@
                                         <div class="col-md-12">
                                             <label class="file-upload p-2">
                                                 <input type="file" name="image">
-                                                <span>Choose a Image</span>
+                                                <span>
+                                                    <span class="material-icons">
+                                                        add_photo_alternate
+                                                    </span>
+                                                    Choose a Image
+                                                </span>
                                             </label>
                                         </div>
                                     </div>

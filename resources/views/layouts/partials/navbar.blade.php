@@ -8,22 +8,44 @@
     <div class="collapse navbar-collapse" id="collapse_target">
         <ul class="navbar navbar-nav w-100">
             <li class="nav-item">
-                <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link" href="/">
+                    <span class="material-icons">
+                        home
+                    </span>
+                    Home
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/gallery"><i class="fas fa-images"></i> Gallery</a>
+                <a class="nav-link" href="/gallery">
+                    <span class="material-icons">
+                        collections
+                    </span>
+                    Gallery
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-address-card" aria-hidden="true"></i> Services</a>
+                <a class="nav-link" href="/tour">
+                    <span class="material-icons">
+                        tour
+                    </span>
+                    Tours
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-globe" aria-hidden="true"></i> Booking</a>
+                <a class="nav-link" href="#">
+                    <span class="material-icons">
+                        travel_explore
+                    </span>
+                    Booking
+                </a>
             </li>
             <li class="nav-item dropdown ml-auto">
                 @guest
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
                         Account
-                        <span><i class="fas fa-chevron-circle-down"></i></span>
+                        <span class="material-icons">
+                            expand_more
+                        </span>
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="dropdown_target">
                         @if (Route::has('login'))
@@ -37,7 +59,9 @@
 
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <span><i class="fas fa-user-circle"></i> {{ Auth::user()->name }}</span>
+                            <span class="material-icons">
+                                account_circle
+                            </span> {{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-info" href="{{ url('/admin/profile') }}">Profile</a>

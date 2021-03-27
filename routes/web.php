@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/gallery', function () {
     return view('layouts.gallery');
 });
+
+Route::get('/tour', 'App\Http\Controllers\TourController@index');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -33,3 +36,5 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::post('/admin/profile-update', 'App\Http\Controllers\AdminProfileController@profileUpdate');
     Route::redirect('/admin', '/admin/user');
 });
+
+
