@@ -8,6 +8,7 @@ class TourController extends Controller
 {
     function index()
     {
-        return view('layouts.user.tours');
+        $tours = \App\Models\Tour::all();
+        return view('layouts.user.tours',compact('tours'));
     }
 }

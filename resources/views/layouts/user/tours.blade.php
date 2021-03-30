@@ -5,7 +5,6 @@
 
 @section('content')
     @include('layouts.partials.navbar')
-
-    <h1>Tours</h1>
+    @include('layouts.partials.toursSection')
     @include('layouts.partials.footer')
 @endsection
