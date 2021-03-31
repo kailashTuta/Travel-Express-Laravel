@@ -14,7 +14,7 @@
                     <a href="/admin/tour"
                         class="list-group-item list-group-item-action list-group-item-info active">Tours</a>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-info">Packages</a>
-                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">Account</a>
+                    <a href="/admin/profile" class="list-group-item list-group-item-action list-group-item-info">Account</a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -57,7 +57,12 @@
                                             @include('layouts.admin.editTour')
                                         </td>
                                         <td>
-                                            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            <form method="POST" action="/admin/tour/{{ $tour->t_id }}">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fas fa-trash"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

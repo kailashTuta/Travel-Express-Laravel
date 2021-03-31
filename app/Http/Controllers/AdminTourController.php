@@ -119,6 +119,7 @@ class AdminTourController extends Controller
      */
     public function destroy(Tour $tour)
     {
-        //
+        $tour->delete();
+        return redirect('/admin/tour');
     }
 }

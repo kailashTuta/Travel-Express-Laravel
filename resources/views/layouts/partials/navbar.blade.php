@@ -26,7 +26,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/tour">
                     <span class="material-icons">
-                        tour
+                        explore
                     </span>
                     Tours
                 </a>
