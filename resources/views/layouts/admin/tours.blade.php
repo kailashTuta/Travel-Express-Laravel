@@ -54,7 +54,7 @@
                                         <td>{{ $tour->name }}</td>
                                         <td>{{ $tour->description }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                            @include('layouts.admin.editTour')
                                         </td>
                                         <td>
                                             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>

@@ -26,4 +26,18 @@ $(document).ready(function () {
         modal.find('.modal-body #uid').val(uid)
         modal.find('.modal-body #role_as').val(role_as)
     })
+
+    $('#editTours').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget)
+        var name = button.data('myname')
+        var description = button.data('mydescription')
+        var tid = button.data('myid')
+
+        var modal = $(this)
+
+        modal.find('.modal-body #name').val(name)
+        modal.find('.modal-body #description').val(description)
+        modal.find('.modal-body #tid').val(tid)
+    })
 })

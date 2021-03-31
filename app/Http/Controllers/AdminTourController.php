@@ -99,9 +99,16 @@ class AdminTourController extends Controller
      * @param  \App\Models\Tour  $tour
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tour $tour)
+    public function update(Request $request)
     {
-        //
+        $tour = array(
+            'name' => $request->name,
+            'description' => $request->description,
+        );
+
+        Tour::findOrFail($request->tour_id)->update($tour);
+
+        return redirect('/admin/tour')->with('success', 'Tour Updated');
     }
 
     /**
