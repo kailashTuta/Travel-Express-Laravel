@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-myname="{{ $tour->name }}"
+<button type="button" class="btn btn-primary" data-myname="{{ $tour->name }}" data-myprice="{{ $tour->price }}"
     data-mydescription="{{ $tour->description }}" data-myid="{{ $tour->t_id }}" data-toggle="modal"
     data-target="#editTours">
     <i class="fas fa-edit"></i>
@@ -23,6 +23,10 @@
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" id="price" class="form-control" name="price">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>

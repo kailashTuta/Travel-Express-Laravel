@@ -11,8 +11,8 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $tour->name }}</h5>
-                        <p class="card-text">{{ $tour->description }}</p>
-                        <a href="#" class="btn btn-info">View More</a>
+                        <p class="card-text text-justify">{{ $tour->description }}</p>
+                        @include('layouts.user.viewTour')
                     </div>
                 </div>
             </div>

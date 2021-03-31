@@ -24,6 +24,10 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" name="description" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" name="price">
+                    </div>
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="image" class="custom-file-input">

@@ -49,12 +49,14 @@ class AdminTourController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'price' => 'required'
         ]);
 
         $tours = new Tour;
         $tours->name = $request->input('name');
         $tours->description = $request->input('description');
+        $tours->price = $request->input('price');
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalName();
@@ -104,6 +106,7 @@ class AdminTourController extends Controller
         $tour = array(
             'name' => $request->name,
             'description' => $request->description,
+            'price' => $request->price,
         );
 
         Tour::findOrFail($request->tour_id)->update($tour);

@@ -37,37 +37,41 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-striped table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($tours as $tour)
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                                <thead class="thead-dark">
                                     <tr>
-                                        <td>{{ $tour->t_id }}</td>
-                                        <td>{{ $tour->name }}</td>
-                                        <td>{{ $tour->description }}</td>
-                                        <td>
-                                            @include('layouts.admin.editTour')
-                                        </td>
-                                        <td>
-                                            <form method="POST" action="/admin/tour/{{ $tour->t_id }}">
-                                                @csrf
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-danger"><i
-                                                        class="fas fa-trash"></i></button>
-                                            </form>
-                                        </td>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Edit</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($tours as $tour)
+                                        <tr>
+                                            <td>{{ $tour->t_id }}</td>
+                                            <td>{{ $tour->name }}</td>
+                                            <td>{{ $tour->description }}</td>
+                                            <td>{{ $tour->price }}</td>
+                                            <td>
+                                                @include('layouts.admin.editTour')
+                                            </td>
+                                            <td>
+                                                <form method="POST" action="/admin/tour/{{ $tour->t_id }}">
+                                                    @csrf
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -17,6 +17,7 @@ class CreateToursTable extends Migration
             $table->bigIncrements('t_id');
             $table->string('name');
             $table->longText('description');
+            $table->bigInteger('price')->default(0);
             $table->mediumText('image')->nullable();
             $table->timestamps();
         });
