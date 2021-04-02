@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-primary" data-myname="{{ $tour->name }}" data-myprice="{{ $tour->price }}"
-    data-mydescription="{{ $tour->description }}" data-myid="{{ $tour->t_id }}" data-toggle="modal"
-    data-target="#editTours">
+    data-mydescription="{{ $tour->description }}" data-myplacescovered="{{ $tour->places_covered }}"
+    data-myid="{{ $tour->t_id }}" data-toggle="modal" data-target="#editTours">
     <i class="fas fa-edit"></i>
 </button>
 
@@ -32,6 +32,11 @@
                         <label for="description">Description</label>
                         <textarea type="text" id="description" class="form-control" name="description"
                             rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="places_covered">Places Covered</label>
+                        <textarea class="form-control" rows="5" id="places_covered" name="places_covered"
+                            required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

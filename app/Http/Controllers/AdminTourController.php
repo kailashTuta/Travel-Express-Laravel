@@ -50,13 +50,15 @@ class AdminTourController extends Controller
             'name' => 'required',
             'description' => 'required',
             'image' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'places_covered' => 'required',
         ]);
 
         $tours = new Tour;
         $tours->name = $request->input('name');
         $tours->description = $request->input('description');
         $tours->price = $request->input('price');
+        $tours->places_covered = $request->input('places_covered');
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalName();
@@ -107,6 +109,7 @@ class AdminTourController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
+            'places_covered' => $request->places_covered,
         );
 
         Tour::findOrFail($request->tour_id)->update($tour);

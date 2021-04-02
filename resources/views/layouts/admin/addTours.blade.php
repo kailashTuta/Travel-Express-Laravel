@@ -22,7 +22,11 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="description" required></textarea>
+                        <textarea class="form-control" rows="5" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="places_covered">Places Covered</label>
+                        <textarea class="form-control" name="places_covered" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>

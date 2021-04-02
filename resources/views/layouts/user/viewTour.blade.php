@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-info" data-myname="{{ $tour->name }}" data-myprice="{{ $tour->price }}"
-    data-mydescription="{{ $tour->description }}" data-myimage="{{ $tour->image }}" data-myid="{{ $tour->t_id }}"
-    data-toggle="modal" data-target="#viewTour">
+    data-mydescription="{{ $tour->description }}" data-myplacescovered="{{ $tour->places_covered }}"
+    data-myimage="{{ $tour->image }}" data-myid="{{ $tour->t_id }}" data-toggle="modal" data-target="#viewTour">
     View More
 </button>
 
@@ -23,6 +23,8 @@
                     <div class="offset-md-1 col-md-7">
                         <label class="font-weight-bolder">Description</label>
                         <p id="viewTourDescription" class="text-justify"></p>
+                        <label class="font-weight-bolder">Places Covered</label>
+                        <p id="viewTourPlacesCovered" class="text-justify"></p>
                         <label class="font-weight-bolder">Price</label>
                         <p id="viewTourPrice" class="text-justify text-capitalize"></p>
                     </div>

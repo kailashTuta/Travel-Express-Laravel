@@ -34,6 +34,7 @@ $(document).ready(function () {
         var description = button.data('mydescription')
         var tid = button.data('myid')
         var price = button.data('myprice')
+        var placesCovered = button.data('myplacescovered')
 
         var modal = $(this)
 
@@ -41,6 +42,7 @@ $(document).ready(function () {
         modal.find('.modal-body #description').val(description)
         modal.find('.modal-body #price').val(price)
         modal.find('.modal-body #tid').val(tid)
+        modal.find('.modal-body #places_covered').val(placesCovered)
     })
     $('#viewTour').on('show.bs.modal', function (event) {
 
@@ -49,6 +51,7 @@ $(document).ready(function () {
         var description = button.data('mydescription')
         var tid = button.data('myid')
         var price = button.data('myprice')
+        var placesCovered = button.data('myplacescovered')
         var image = button.data('myimage')
 
         var priceTag = price + '/- per person';
@@ -57,6 +60,7 @@ $(document).ready(function () {
         var modal = $(this)
         modal.find('.modal-header #viewTourLabel').text(name)
         modal.find('.modal-body #viewTourDescription').text(description)
+        modal.find('.modal-body #viewTourPlacesCovered').text(placesCovered)
         modal.find('.modal-body #viewTourPrice').text(priceTag)
         modal.find('.modal-body #viewTourImg').attr('src', imgpth)
         modal.find('.modal-body #viewTourImg').attr('alt', name)
@@ -65,5 +69,6 @@ $(document).ready(function () {
         modal.find('.modal-body #description').val(description)
         modal.find('.modal-body #price').val(price)
         modal.find('.modal-body #tid').val(tid)
+        modal.find('.modal-body #places_covered').val(placesCovered)
     })
 })

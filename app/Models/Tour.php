@@ -10,5 +10,5 @@ class Tour extends Model
     use HasFactory;
     protected $table = 'tours';
     protected $primaryKey = 't_id';
-    protected $fillable = ['name', 'description', 'image', 'price'];
+    protected $fillable = ['name', 'description', 'image', 'price', 'places_covered'];
 }
