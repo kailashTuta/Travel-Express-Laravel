@@ -1,25 +1,26 @@
-<button type="button" class="btn btn-primary" data-myname="{{ $tour->name }}" data-myprice="{{ $tour->price }}"
-    data-mydescription="{{ $tour->description }}" data-myplacescovered="{{ $tour->places_covered }}"
-    data-myid="{{ $tour->t_id }}" data-toggle="modal" data-target="#editTours">
+<button type="button" class="btn btn-primary" data-myname="{{ $package->name }}"
+    data-myprice="{{ $package->price }}" data-mydescription="{{ $package->description }}"
+    data-myplacescovered="{{ $package->places_covered }}" data-myid="{{ $package->p_id }}" data-toggle="modal"
+    data-target="#editPackages">
     <i class="fas fa-edit"></i>
 </button>
 
-<div class="modal fade" id="editTours" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="addUsersLabel" aria-hidden="true">
+<div class="modal fade" id="editPackages" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby=editPackagesLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editToursLabel">Edit Tour
+                <h5 class="modal-title" id="editPackagesLabel">Edit Package
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="{{ route('tour.update', 'tour_id') }}">
+            <form method="post" action="{{ route('package.update', 'package_id') }}">
                 @csrf
                 {{ method_field('PATCH') }}
                 <div class="modal-body">
-                    <input type="hidden" name="tour_id" id="tid" value="">
+                    <input type="hidden" name="package_id" id="p_id" value="">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" class="form-control" name="name">

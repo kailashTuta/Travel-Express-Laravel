@@ -13,7 +13,7 @@
                     <a href="/admin/user" class="list-group-item list-group-item-action list-group-item-info">Users</a>
                     <a href="/admin/tour"
                         class="list-group-item list-group-item-action list-group-item-info active">Tours</a>
-                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">Packages</a>
+                    <a href="/admin/package" class="list-group-item list-group-item-action list-group-item-info">Packages</a>
                     <a href="/admin/profile" class="list-group-item list-group-item-action list-group-item-info">Account</a>
                 </div>
             </div>
@@ -44,6 +44,7 @@
                                         <th scope="col">Id</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Description</th>
+                                        <th scope="col">Places Covered</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Delete</th>
@@ -55,6 +56,7 @@
                                             <td>{{ $tour->t_id }}</td>
                                             <td>{{ $tour->name }}</td>
                                             <td>{{ $tour->description }}</td>
+                                            <td>{{ $tour->places_covered }}</td>
                                             <td>{{ $tour->price }}</td>
                                             <td>
                                                 @include('layouts.admin.editTour')

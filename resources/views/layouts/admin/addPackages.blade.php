@@ -1,19 +1,19 @@
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addTours">
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPackage">
     <i class="fas fa-plus-circle"></i>
-    Add Tour
+    Add Package
 </button>
 
-<div class="modal fade" id="addTours" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="addUsersLabel" aria-hidden="true">
+<div class="modal fade" id="addPackage" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="addPackageLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addToursLabel">Add Tour</h5>
+                <h5 class="modal-title" id="addPackageLabel">Add Tour</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/admin/tour" method="post" enctype="multipart/form-data">
+            <form action="/admin/package" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

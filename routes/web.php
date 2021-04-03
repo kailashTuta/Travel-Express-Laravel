@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::view('admin', 'layouts.admin.adminDashboard');
     Route::resource('/admin/user', 'App\Http\Controllers\UserController');
     Route::resource('/admin/tour', 'App\Http\Controllers\AdminTourController');
+    Route::resource('/admin/package', 'App\Http\Controllers\AdminPackageController');
 
     Route::get('/search', 'App\Http\Controllers\UserController@search');
     Route::get('/toursearch', 'App\Http\Controllers\AdminTourController@search');
