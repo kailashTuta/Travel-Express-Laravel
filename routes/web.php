@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.index');
-});
+Route::get('/', 'App\Http\Controllers\IndexController@index');
 Route::get('/gallery', function () {
     return view('layouts.gallery');
 });

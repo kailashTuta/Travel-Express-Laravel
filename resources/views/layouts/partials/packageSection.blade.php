@@ -1,7 +1,7 @@
 <div class="container tour-images mb-5">
     <h1 class="text-center">Packages</h1>
     <hr class="bg-info mb-4">
-    <div class="row justify-content-center">
+    <div class="row justify-content-around">
         @foreach ($packages as $package)
             <div class="col-md-4">
                 <div class="card shadow h-100" style="width: 20rem;">
