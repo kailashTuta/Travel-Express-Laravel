@@ -12,9 +12,15 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $trip_name = $request->name;
+        $price = $request->price;
+        $tour_id = $request->tour_id;
+        $package_id = $request->package_id;
+
+        return view('layouts.user.booking')->with('trip_name', $trip_name)->with('price', $price)->
+        with('tour_id', $tour_id)->with('package_id',$package_id);
     }
 
     /**

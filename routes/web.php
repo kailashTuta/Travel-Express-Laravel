@@ -18,13 +18,13 @@ Route::get('/', 'App\Http\Controllers\IndexController@index');
 Route::get('/gallery', function () {
     return view('layouts.gallery');
 });
-
 Route::get('/tour', 'App\Http\Controllers\TourController@index');
+Route::resource('/booking', 'App\Http\Controllers\BookingController');
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/booking', 'App\Http\Controllers\BookingController');
+
+
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::view('admin', 'layouts.admin.adminDashboard');

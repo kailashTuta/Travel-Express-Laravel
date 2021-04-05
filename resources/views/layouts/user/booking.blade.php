@@ -1,0 +1,10 @@
+@extends('layouts.partials.master')
+@section('title')
+    Tavel Express | Tours
+@endsection
+
+@section('content')
+    @include('layouts.partials.navbar')
+    @include('layouts.partials.bookingForm')
+    @include('layouts.partials.footer')
+@endsection

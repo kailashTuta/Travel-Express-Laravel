@@ -112,7 +112,7 @@ $(document).ready(function () {
         modal.find('.modal-body #name').val(name)
         modal.find('.modal-body #description').val(description)
         modal.find('.modal-body #price').val(price)
-        modal.find('.modal-body #tid').val(pid)
+        modal.find('.modal-body #p_id').val(pid)
         modal.find('.modal-body #places_covered').val(placesCovered)
     })
 })

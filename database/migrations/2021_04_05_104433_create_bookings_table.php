@@ -17,6 +17,7 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('booking_id');
             $table->string('trip_name');
             $table->Integer('persons');
+            $table->bigInteger('mobile');
             $table->bigInteger('price');
             $table->string('status')->default('pending');
             $table->integer('trip_id')->nullable();
