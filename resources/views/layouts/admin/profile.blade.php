@@ -13,7 +13,9 @@
                     <h3 class="text-white text-center text-uppercase">Dashboard</h3>
                     <a href="/admin/user" class="list-group-item list-group-item-action list-group-item-info">Users</a>
                     <a href="/admin/tour" class="list-group-item list-group-item-action list-group-item-info">Tours</a>
-                    <a href="/admin/package" class="list-group-item list-group-item-action list-group-item-info">Packages</a>
+                    <a href="/admin/package"
+                        class="list-group-item list-group-item-action list-group-item-info">Packages</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">Bookings</a>
                     <a href="/admin/profile"
                         class="list-group-item list-group-item-action list-group-item-info active">Account</a>
                 </div>

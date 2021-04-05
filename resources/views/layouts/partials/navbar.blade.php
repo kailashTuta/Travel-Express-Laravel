@@ -24,19 +24,17 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="far fa-id-badge"></i>
+                    Services
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/tour">
                     <span class="material-icons">
                         explore
                     </span>
                     Tours
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span class="material-icons">
-                        travel_explore
-                    </span>
-                    Booking
                 </a>
             </li>
             <li class="nav-item dropdown ml-auto">

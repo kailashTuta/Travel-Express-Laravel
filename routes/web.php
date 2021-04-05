@@ -24,6 +24,7 @@ Route::get('/tour', 'App\Http\Controllers\TourController@index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/booking', 'App\Http\Controllers\BookingController');
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::view('admin', 'layouts.admin.adminDashboard');

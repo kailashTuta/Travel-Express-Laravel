@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <img id="viewPackageImg" class="w-100 mb-2 h-75" src="" alt="">
-                        <button class="btn btn-info btn-block">Book</button>
+                        <button class="btn btn-info btn-block">Book Now</button>
                     </div>
                     <div class="offset-md-1 col-md-7">
                         <label class="font-weight-bolder">Description</label>

@@ -15,6 +15,8 @@
                     <a href="/admin/tour" class="list-group-item list-group-item-action list-group-item-info">Tours</a>
                     <a href="/admin/package"
                         class="list-group-item list-group-item-action list-group-item-info">Packages</a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action list-group-item-info">Bookings</a>
                     <a href="/admin/profile" class="list-group-item list-group-item-action list-group-item-info">Account</a>
                 </div>
             </div>
