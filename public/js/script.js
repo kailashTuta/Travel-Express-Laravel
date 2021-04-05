@@ -88,4 +88,31 @@ $(document).ready(function () {
         modal.find('.modal-body #tid').val(tid)
         modal.find('.modal-body #places_covered').val(placesCovered)
     })
+    $('#viewPackage').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget)
+        var name = button.data('myname')
+        var description = button.data('mydescription')
+        var pid = button.data('myid')
+        var price = button.data('myprice')
+        var placesCovered = button.data('myplacescovered')
+        var image = button.data('myimage')
+
+        var priceTag = price + '/- per person';
+        var imgpth = "/images/package-images/" + image;
+
+        var modal = $(this)
+        modal.find('.modal-header #viewPackageLabel').text(name)
+        modal.find('.modal-body #viewPackageDescription').text(description)
+        modal.find('.modal-body #viewPackagePlacesCovered').text(placesCovered)
+        modal.find('.modal-body #viewPackagePrice').text(priceTag)
+        modal.find('.modal-body #viewPackageImg').attr('src', imgpth)
+        modal.find('.modal-body #viewPackageImg').attr('alt', name)
+
+        modal.find('.modal-body #name').val(name)
+        modal.find('.modal-body #description').val(description)
+        modal.find('.modal-body #price').val(price)
+        modal.find('.modal-body #tid').val(pid)
+        modal.find('.modal-body #places_covered').val(placesCovered)
+    })
 })
