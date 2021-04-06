@@ -16,9 +16,10 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('booking_id');
             $table->string('trip_name');
-            $table->Integer('persons');
+            $table->Integer('persons')->default(1);
             $table->bigInteger('mobile');
             $table->bigInteger('price');
+            $table->date('journey_date');
             $table->string('status')->default('pending');
             $table->integer('trip_id')->nullable();
             $table->integer('package_id')->nullable();

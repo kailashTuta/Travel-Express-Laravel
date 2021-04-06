@@ -19,7 +19,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <img id="viewPackageImg" class="w-100 mb-2 h-75" src="" alt="">
-                        <form action="" method="post">
+                        <form action="/booking" method="get">
+                            <input type="hidden" name="name" id="name">
                             <input type="hidden" name="package_id" id="p_id" value="">
                             <input type="hidden" name="price" id="price" value="">
                             <button class="btn btn-info btn-block">Book Now</button>

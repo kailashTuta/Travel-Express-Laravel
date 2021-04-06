@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class BookingController extends Controller
 {
     /**
@@ -14,13 +16,13 @@ class BookingController extends Controller
      */
     public function index(Request $request)
     {
+        // $user_id = Auth::user()->id;
         $trip_name = $request->name;
         $price = $request->price;
         $tour_id = $request->tour_id;
         $package_id = $request->package_id;
 
-        return view('layouts.user.booking')->with('trip_name', $trip_name)->with('price', $price)->
-        with('tour_id', $tour_id)->with('package_id',$package_id);
+        return view('layouts.user.booking')->with('trip_name', $trip_name)->with('price', $price)->with('tour_id', $tour_id)->with('package_id', $package_id);
     }
 
     /**
