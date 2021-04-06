@@ -13,7 +13,7 @@ class AdminProfileController extends Controller
 {
     public function myProfile()
     {
-        return view('layouts.user.profile');
+        return view('layouts.admin.profile');
     }
 
     public function profileUpdate(Request $request)
@@ -44,7 +44,7 @@ class AdminProfileController extends Controller
         }
 
         $user->update();
-        return redirect('/user/profile');
+        return redirect('/admin/profile');
     }
 
     public function myBooking()
