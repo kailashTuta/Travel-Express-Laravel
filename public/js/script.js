@@ -7,6 +7,7 @@ $(document).ready(function () {
         }
     });
 
+    // Editing Classes
     $('#editUsers').on('show.bs.modal', function (event) {
 
         var button = $(event.relatedTarget)
@@ -127,4 +128,9 @@ $(document).ready(function () {
         modal.find('.modal-body #b_id').val(bid)
         modal.find('.modal-body #status').val(status)
     })
+
+    // Adding classes to my booking
+    $("#confirmed").addClass("bg-success");
+    $("#pending").addClass("bg-warning");
+    $("#cancelled").addClass("bg-danger");
 })

@@ -21,44 +21,38 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Booking Id</th>
-                                        <th scope="col">Tour Name</th>
-                                        <th scope="col">Persons</th>
-                                        <th scope="col">Mobile</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Journey Date</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Tour Id</th>
-                                        <th scope="col">Package Id</th>
-                                        <th scope="col">User Id</th>
-                                        <th scope="col">Edit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($bookings as $booking)
-                                        <tr>
-                                            <td>{{ $booking->booking_id }}</td>
-                                            <td>{{ $booking->trip_name }}</td>
-                                            <td>{{ $booking->persons }}</td>
-                                            <td>{{ $booking->mobile }}</td>
-                                            <td>{{ $booking->price }}</td>
-                                            <td>{{ $booking->journey_date }}</td>
-                                            <td>{{ $booking->status }}</td>
-                                            <td>{{ $booking->trip_id }}</td>
-                                            <td>{{ $booking->package_id }}</td>
-                                            <td>{{ $booking->user_id }}</td>
-                                            <td>
-                                                <button class="btn btn-primary"> <i class="fas fa-edit"></i></button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                        @foreach ($bookings as $booking)
+                            <div class="card text-white" style="width: 25rem;" id="{{ $booking->status }}">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <span class="material-icons">
+                                            place
+                                        </span>{{ $booking->trip_name }}
+                                    </h4>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p><span>Booking Id: </span>{{ $booking->booking_id }}</p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p><span>No of Persons: </span>{{ $booking->persons }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p><span>Price: </span>{{ $booking->price }}</p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p><span>Journey Date: </span>{{ $booking->journey_date }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>Status: {{ $booking->status }}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

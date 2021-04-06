@@ -22,8 +22,8 @@
                     <div class="form-group">
                         <select class="custom-select" name="status" id="status">
                             <option selected></option>
-                            <option value="success">Success</option>
-                            <option value="canceled">Cancelled</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="cancelled">Cancelled</option>
                             <option value="pending">pending</option>
                         </select>
                     </div>
