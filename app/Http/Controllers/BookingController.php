@@ -6,6 +6,7 @@ use App\Models\Booking;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class BookingController extends Controller
 {
@@ -14,7 +15,19 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
+    {
+        $bookings = new Booking;
+        $bookings = $bookings::all();
+        return view('layouts.admin.adminBooking', compact('bookings'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
     {
         // $user_id = Auth::user()->id;
         $trip_name = $request->name;
@@ -26,16 +39,6 @@ class BookingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -43,7 +46,28 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'trip_name' => 'required',
+            'persons' => 'required',
+            'mobile' => 'required',
+            'price' => 'required',
+            'journey_date' => 'required',
+            // 'tour_id' => 'required',
+            // 'package_id' => 'required',
+            'user_id' => 'required',
+        ]);
+        $price = $request->persons * $request->price;
+        $booking = new Booking;
+        $booking->trip_name = $request->trip_name;
+        $booking->persons = $request->persons;
+        $booking->price = $price;
+        $booking->mobile = $request->mobile;
+        $booking->journey_date = $request->journey_date;
+        $booking->trip_id = $request->tour_id;
+        $booking->package_id = $request->package_id;
+        $booking->user_id = $request->user_id;
+        $booking->save();
+        return redirect('/');
     }
 
     /**

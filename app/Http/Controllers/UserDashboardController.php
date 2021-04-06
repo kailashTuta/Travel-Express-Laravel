@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\Booking;
 use Illuminate\Support\Facades\File;
 
-class AdminProfileController extends Controller
+class UserDashboardController extends Controller
 {
     public function myProfile()
     {
@@ -50,6 +50,6 @@ class AdminProfileController extends Controller
     public function myBooking()
     {
         $bookings = Booking::where('user_id', '=', Auth::user()->id)->get();
-        return view('layouts.admin.myBooking', compact('bookings'));
+        return view('layouts.user.myBooking', compact('bookings'));
     }
 }

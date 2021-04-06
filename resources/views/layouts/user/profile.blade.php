@@ -11,14 +11,9 @@
             <div class="col-md-2">
                 <div class="list-group list-group-flush bg-dark">
                     <h3 class="text-white text-center text-uppercase">Dashboard</h3>
-                    <a href="/admin/user" class="list-group-item list-group-item-action list-group-item-info">Users</a>
-                    <a href="/admin/tour" class="list-group-item list-group-item-action list-group-item-info">Tours</a>
-                    <a href="/admin/package"
-                        class="list-group-item list-group-item-action list-group-item-info">Packages</a>
-                    <a href="/booking" class="list-group-item list-group-item-action list-group-item-info">Bookings</a>
-                    <a href="/admin/my-booking" class="list-group-item list-group-item-action list-group-item-info">My
+                    <a href="/user/my-booking" class="list-group-item list-group-item-action list-group-item-info">My
                         Bookings</a>
-                    <a href="/admin/profile"
+                    <a href="/user/profile"
                         class="list-group-item list-group-item-action list-group-item-info active">Account</a>
                 </div>
             </div>
@@ -27,7 +22,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-center text-uppercase text-white bg-dark p-3">My Profile Page</h3>
 
-                        <form action="{{ url('/admin/profile-update') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/user/profile-update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-3">

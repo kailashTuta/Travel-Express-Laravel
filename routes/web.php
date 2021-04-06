@@ -24,7 +24,9 @@ Route::resource('/booking', 'App\Http\Controllers\BookingController');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::get('/user/my-booking', 'App\Http\Controllers\UserDashboardController@myBooking');
+Route::get('/user/profile', 'App\Http\Controllers\UserDashboardController@myProfile');
+Route::post('/user/profile-update', 'App\Http\Controllers\UserDashboardController@profileUpdate');
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::view('admin', 'layouts.admin.adminDashboard');
@@ -35,6 +37,7 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::get('/search', 'App\Http\Controllers\UserController@search');
     Route::get('/toursearch', 'App\Http\Controllers\AdminTourController@search');
 
+    Route::get('/admin/my-booking', 'App\Http\Controllers\AdminProfileController@myBooking');
     Route::get('/admin/profile', 'App\Http\Controllers\AdminProfileController@myProfile');
     Route::post('/admin/profile-update', 'App\Http\Controllers\AdminProfileController@profileUpdate');
     Route::redirect('/admin', '/admin/user');

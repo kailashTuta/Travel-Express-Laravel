@@ -13,8 +13,9 @@
                     <a href="/admin/user" class="list-group-item list-group-item-action list-group-item-info">Users</a>
                     <a href="/admin/tour" class="list-group-item list-group-item-action list-group-item-info">Tours</a>
                     <a href="/admin/package"
-                        class="list-group-item list-group-item-action list-group-item-info active">Packages</a>
-                    <a href="/booking" class="list-group-item list-group-item-action list-group-item-info">Bookings</a>
+                        class="list-group-item list-group-item-action list-group-item-info">Packages</a>
+                    <a href="/booking"
+                        class="list-group-item list-group-item-action list-group-item-info active">Bookings</a>
                     <a href="/admin/my-booking" class="list-group-item list-group-item-action list-group-item-info">My
                         Bookings</a>
                     <a href="/admin/profile" class="list-group-item list-group-item-action list-group-item-info">Account</a>
@@ -22,9 +23,7 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-2 mb-1">
-                        @include('layouts.admin.addPackages')
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -32,33 +31,34 @@
                             <table class="table table-striped table-bordered">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Places Covered</th>
+                                        <th scope="col">Booking Id</th>
+                                        <th scope="col">Tour Name</th>
+                                        <th scope="col">Persons</th>
+                                        <th scope="col">Mobile</th>
                                         <th scope="col">Price</th>
+                                        <th scope="col">Journey Date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Tour Id</th>
+                                        <th scope="col">Package Id</th>
+                                        <th scope="col">User Id</th>
                                         <th scope="col">Edit</th>
-                                        <th scope="col">Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($packages as $package)
+                                    @foreach ($bookings as $booking)
                                         <tr>
-                                            <td>{{ $package->p_id }}</td>
-                                            <td>{{ $package->name }}</td>
-                                            <td>{{ $package->description }}</td>
-                                            <td>{{ $package->places_covered }}</td>
-                                            <td>{{ $package->price }}</td>
+                                            <td>{{ $booking->booking_id }}</td>
+                                            <td>{{ $booking->trip_name }}</td>
+                                            <td>{{ $booking->persons }}</td>
+                                            <td>{{ $booking->mobile }}</td>
+                                            <td>{{ $booking->price }}</td>
+                                            <td>{{ $booking->journey_date }}</td>
+                                            <td>{{ $booking->status }}</td>
+                                            <td>{{ $booking->trip_id }}</td>
+                                            <td>{{ $booking->package_id }}</td>
+                                            <td>{{ $booking->user_id }}</td>
                                             <td>
-                                                @include('layouts.admin.editPackages')
-                                            </td>
-                                            <td>
-                                                <form method="POST" action="/admin/package/{{ $package->p_id }}">
-                                                    @csrf
-                                                    {{ method_field('DELETE') }}
-                                                    <button type="submit" class="btn btn-danger"><i
-                                                            class="fas fa-trash"></i></button>
-                                                </form>
+                                                <button class="btn btn-primary"> <i class="fas fa-edit"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach

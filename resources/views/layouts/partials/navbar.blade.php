@@ -62,7 +62,11 @@
                             </span> {{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-info" href="{{ url('/admin/profile') }}">Profile</a>
+                            @if (Auth::user()->role_as == 'admin')
+                                <a class="dropdown-item text-info" href="{{ url('/admin/profile') }}">Profile</a>
+                            @else
+                                <a class="dropdown-item text-info" href="{{ url('/user/profile') }}">Profile</a>
+                            @endif
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-info" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

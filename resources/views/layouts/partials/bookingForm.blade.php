@@ -1,4 +1,7 @@
 <div>
+    @if ($errors->any())
+        {!! implode('', $errors->all('<div>:message</div>')) !!}
+    @endif
     <form class="form-container" action="/booking" method="post">
         @csrf
         <div class="form-group">
