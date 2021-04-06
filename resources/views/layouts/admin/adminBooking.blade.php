@@ -58,7 +58,7 @@
                                             <td>{{ $booking->package_id }}</td>
                                             <td>{{ $booking->user_id }}</td>
                                             <td>
-                                                <button class="btn btn-primary"> <i class="fas fa-edit"></i></button>
+                                                @include('layouts.admin.editBooking')
                                             </td>
                                         </tr>
                                     @endforeach

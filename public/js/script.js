@@ -115,4 +115,16 @@ $(document).ready(function () {
         modal.find('.modal-body #p_id').val(pid)
         modal.find('.modal-body #places_covered').val(placesCovered)
     })
+
+    $('#editBooking').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget)
+        var bid = button.data('myid')
+        var status = button.data('mystatus')
+
+
+        var modal = $(this)
+        modal.find('.modal-body #b_id').val(bid)
+        modal.find('.modal-body #status').val(status)
+    })
 })

@@ -99,9 +99,14 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request)
     {
-        //
+        $booking = array(
+            'status' => $request->status,
+        );
+
+        Booking::findOrFail($request->booking_id)->update($booking);
+        return redirect('/admin')->with('success', 'User Updated');
     }
 
     /**
