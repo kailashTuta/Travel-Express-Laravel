@@ -1,6 +1,5 @@
 <div class="container tour-images mb-5">
-    <h1 class="text-center">Packages</h1>
-    <hr class="bg-info mb-4">
+    <h1 class="card-title text-center text-uppercase text-white bg-dark p-3 mt-2">Packages</h1>
     <div class="row justify-content-around">
         @foreach ($packages as $package)
             <div class="col-md-4">

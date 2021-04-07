@@ -24,12 +24,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="far fa-id-badge"></i>
-                    Services
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="/tour">
                     <span class="material-icons">
                         explore

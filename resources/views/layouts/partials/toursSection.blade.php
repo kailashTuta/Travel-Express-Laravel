@@ -1,6 +1,5 @@
 <div class="container tour-images mb-5">
-    <h1 class="text-center">Tours</h1>
-    <hr class="bg-info mb-4">
+    <h1 class="card-title text-center text-uppercase text-white bg-dark p-3 mt-2">Tours</h1>
     <div class="row justify-content-center">
         @foreach ($tours as $tour)
             <div class="col-md-4">
