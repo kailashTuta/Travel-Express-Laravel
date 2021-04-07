@@ -23,7 +23,18 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-
+                    <div class="col-md-4 offset-md-8">
+                        <form action="/bookingsearch" method="get">
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control" name="search" placeholder="Search"
+                                    autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info" type="button"><i
+                                            class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">

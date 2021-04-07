@@ -1,8 +1,16 @@
 <div>
-    @if ($errors->any())
-        {!! implode('', $errors->all('<div>:message</div>')) !!}
-    @endif
     <form class="form-container" action="/booking" method="post">
+        @if ($errors->any())
+            {!! implode(
+    '',
+    $errors->all('<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        :message
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>'),
+) !!}
+        @endif
         @csrf
         <div class="form-group">
             <label for="trip_name">Tour Name</label>

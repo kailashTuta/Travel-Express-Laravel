@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
     Route::get('/search', 'App\Http\Controllers\UserController@search');
     Route::get('/toursearch', 'App\Http\Controllers\AdminTourController@search');
+    Route::get('/bookingsearch', 'App\Http\Controllers\BookingController@search');
 
     Route::get('/admin/my-booking', 'App\Http\Controllers\AdminProfileController@myBooking');
     Route::get('/admin/profile', 'App\Http\Controllers\AdminProfileController@myProfile');

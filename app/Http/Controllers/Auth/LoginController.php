@@ -33,7 +33,7 @@ class LoginController extends Controller
         if (Auth::user()->role_as == 'admin') {
             return 'admin';
         } else {
-            return '/';
+            return '/user/my-booking';
         }
     }
 

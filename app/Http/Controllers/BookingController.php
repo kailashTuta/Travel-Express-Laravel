@@ -22,6 +22,13 @@ class BookingController extends Controller
         return view('layouts.admin.adminBooking', compact('bookings'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $bookings = Booking::where('user_id', '=', $search)->get();
+        return view('layouts.admin.adminBooking', compact('bookings'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
