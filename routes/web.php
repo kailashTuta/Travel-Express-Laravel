@@ -21,6 +21,8 @@ Route::get('/gallery', function () {
 Route::get('/tour', 'App\Http\Controllers\TourController@index');
 Route::resource('/booking', 'App\Http\Controllers\BookingController');
 
+Route::post('/mail/send', 'App\Http\Controllers\MailController@send');
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

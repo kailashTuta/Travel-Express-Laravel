@@ -49,13 +49,32 @@
             <div class="col-md-4 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">Connect With Us</h6>
                 <hr class="bg-info mb-4 mt-0 d-inline-block mx-auto">
-                <form action="/" method="post">
+                @if (count($errors) > 0)
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ $error }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endforeach
+                @endif
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                <form action="/mail/send" method="post">
+                    @csrf
                     <div class="form-group">
                         <input type="Email" class="form-control form-control-sm" name="email"
-                            placeholder="Please Enter Your Email" autocomplete="off" required>
+                            placeholder="Please Enter Your Email" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="2" placeholder="Leave a Message"></textarea>
+                        <textarea class="form-control" name="message" rows="2" placeholder="Leave a Message"></textarea>
                     </div>
                     <div class="form-text">
                         <input type="submit" class="btn btn-info" value="Send">
