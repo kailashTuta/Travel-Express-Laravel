@@ -38,7 +38,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="journey_date">Journey Date</label>
-                <input type="date" name="journey_date" class="form-control">
+                <input type="date" name="journey_date" id="journey_date" class="form-control">
             </div>
         </div>
         @if ($package_id == null)

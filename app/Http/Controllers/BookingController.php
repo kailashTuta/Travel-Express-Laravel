@@ -74,7 +74,11 @@ class BookingController extends Controller
         $booking->package_id = $request->package_id;
         $booking->user_id = $request->user_id;
         $booking->save();
-        return redirect('/');
+        if (Auth::user()->role_as == "admin") {
+            return redirect('/admin/profile');
+        } else {
+            return redirect('/user/profile');
+        }
     }
 
     /**

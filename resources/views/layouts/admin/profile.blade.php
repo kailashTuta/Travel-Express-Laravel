@@ -136,7 +136,7 @@
                             <div class="row">
                                 <div class="offset-md-10 col-md-2">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">Update Profile</button>
+                                        <button type="submit" class="btn btn-info">Save</button>
                                     </div>
                                 </div>
                             </div>

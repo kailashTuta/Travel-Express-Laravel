@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         @foreach ($bookings as $booking)
-                            <div class="card text-white" style="width: 25rem;" id="{{ $booking->status }}">
+                            <div class="card text-white {{ $booking->status }} mb-2" style="width: 25rem;" id="">
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <span class="material-icons">
