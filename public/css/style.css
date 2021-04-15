@@ -16,8 +16,48 @@ hr {
     margin: 0 auto;
 }
 
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
 a {
     text-decoration: none !important;
+}
+
+label {
+    font-family: 'Cairo', sans-serif;
+}
+
+th {
+    font-family: 'Mulish', sans-serif;
+}
+
+td {
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Patua One', cursive;
+}
+
+h4 {
+    font-family: 'Lobster', cursive;
+}
+
+h5 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+footer ul li {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navbar-text {
+    font-family: 'Pacifico', cursive;
 }
 
 .navbar>.nav-item>.nav-link:hover {
@@ -26,6 +66,10 @@ a {
 
 .navbar-brand>.navbar-text:hover {
     color: #4BC0D9
+}
+
+.nav-link {
+    font-family: 'Roboto Slab', serif;
 }
 
 .material-icons {
@@ -43,6 +87,10 @@ a {
 
 .dropdown-menu .dropdown-item {
     white-space: normal;
+}
+
+.dropdown-item {
+    font-family: 'Roboto Slab', serif;
 }
 
 #premiumPackage>h1 {
