@@ -46,10 +46,11 @@
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-info btn-block">{{ __('Login') }}</button>
-                            @if (Route::has('password.request'))
+                            <p><span>Not a User?</span><a href="{{ route('register') }}">Register</a></p>
+                            {{-- @if (Route::has('password.request'))
                                 <a class="btn btn-link"
                                     href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-                            @endif
+                            @endif --}}
                         </div>
 
                     </form>
