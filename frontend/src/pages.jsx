@@ -1,11 +1,38 @@
 import { useEffect, useState } from 'react'; import { useLocation, useNavigate } from 'react-router-dom'; import api from './api/client'; import { useAuth } from './context/AuthContext'; import { Catalog } from './components/Catalog';
 export function Home(){return <><div className="p-5 mb-4 bg-light rounded-3"><h1>Travel Express</h1><p>Explore our travel packages.</p></div><h2>Packages</h2><Catalog type="packages" limit={3}/></>}
-export function Gallery(){return <><h1>Gallery</h1><p>Travel Express gallery.</p></>}
+export function Gallery(){
+  const images = Array.from({length: 8}, (_, i) => `http://localhost:8000/images/gallery-images/img-${i+1}.jpg`);
+  return <>
+    <h1 className="mb-4">Gallery</h1>
+    <div className="row">
+      {images.map((src, i) => (
+        <div className="col-md-3 col-sm-6 mb-4" key={i}>
+          <div className="card h-100 shadow-sm border-0">
+            <img src={src} className="card-img-top rounded" alt={`Gallery ${i+1}`} style={{height: '200px', objectFit: 'cover'}} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </>;
+}
 export function Tours(){return <><h1>Tours</h1><Catalog type="tours"/><h2>Packages</h2><Catalog type="packages"/></>}
 export function Login(){const {save}=useAuth(), n=useNavigate(),[data,setData]=useState({email:'',password:''}),[error,setError]=useState('');const submit=async e=>{e.preventDefault();try{const r=await api.post('/auth/login',data);save(r.data.data);n(r.data.data.user.role_as==='admin'?'/admin/users':'/');}catch(e){setError(e.response?.data?.message||'Login failed');}};return <AuthForm title="Login" data={data} setData={setData} submit={submit} error={error}/>}
 export function Register(){const {save}=useAuth(),n=useNavigate(),[data,setData]=useState({fname:'',lname:'',name:'',email:'',password:'',password_confirmation:''}),[error,setError]=useState('');const submit=async e=>{e.preventDefault();try{const r=await api.post('/auth/register',data);save(r.data.data);n('/');}catch(e){setError('Please correct the highlighted details.');}};return <AuthForm title="Register" data={data} setData={setData} submit={submit} error={error} register/>}
 function AuthForm({title,data,setData,submit,error,register}) { const fields=register?['fname','lname','name','email','password','password_confirmation']:['email','password']; return <form className="col-md-5 mx-auto" onSubmit={submit}><h1>{title}</h1>{error&&<p className="text-danger">{error}</p>}{fields.map(k=><input key={k} className="form-control mb-2" type={k.includes('password')?'password':k==='email'?'email':'text'} placeholder={k.replace('_',' ')} value={data[k]} onChange={e=>setData({...data,[k]:e.target.value})} required/>)}<button className="btn btn-primary">{title}</button></form>}
-export function Booking(){const {user}=useAuth(),q=new URLSearchParams(useLocation().search),n=useNavigate(),[data,setData]=useState({trip_name:q.get('name')||'',price:q.get('price')||'',tour_id:q.get('tour_id')||'',package_id:q.get('package_id')||'',persons:1,mobile:user?.mobile||'',journey_date:''}),[error,setError]=useState(''); const submit=async e=>{e.preventDefault();try{await api.post('/bookings',data);n(user.role_as==='admin'?'/admin/profile':'/profile');}catch(e){setError('Please complete all booking fields.');}};return <form className="col-md-6 mx-auto" onSubmit={submit}><h1>Booking</h1>{error&&<p className="text-danger">{error}</p>}{['trip_name','persons','mobile','price','journey_date'].map(k=><input className="form-control mb-2" key={k} type={k==='journey_date'?'date':'text'} placeholder={k.replace('_',' ')} value={data[k]} onChange={e=>setData({...data,[k]:e.target.value})} required/>)}<button className="btn btn-info">Confirm booking</button></form>}
+export function Booking(){
+  const {user}=useAuth(),q=new URLSearchParams(useLocation().search),n=useNavigate(),[data,setData]=useState({trip_name:q.get('name')||'',price:q.get('price')||'',tour_id:q.get('tour_id')||'',package_id:q.get('package_id')||'',persons:1,mobile:user?.mobile||'',journey_date:''}),[error,setError]=useState('');
+  const imgUrl = q.get('image');
+  const submit=async e=>{e.preventDefault();try{await api.post('/bookings',data);n(user.role_as==='admin'?'/admin/bookings':'/my-bookings');}catch(e){setError('Please complete all booking fields.');}};
+  return <div className="row col-md-10 mx-auto">
+    {imgUrl && <div className="col-md-6 mb-4"><div className="card shadow-sm border-0"><img src={imgUrl} className="card-img rounded shadow" alt="Trip Image" style={{maxHeight: '350px', objectFit: 'cover'}}/></div></div>}
+    <form className={imgUrl ? "col-md-6" : "col-md-8 mx-auto"} onSubmit={submit}>
+      <h1>Booking Details</h1>
+      {error&&<p className="text-danger">{error}</p>}
+      {['trip_name','persons','mobile','price','journey_date'].map(k=><input className="form-control mb-2" key={k} type={k==='journey_date'?'date':'text'} placeholder={k.replace('_',' ')} value={data[k]} onChange={e=>setData({...data,[k]:e.target.value})} required disabled={k === 'trip_name' || k === 'price'}/>)}
+      <button className="btn btn-info w-100 mt-2">Confirm Booking</button>
+    </form>
+  </div>;
+}
 export function Profile(){const {user,save}=useAuth(),[data,setData]=useState(user||{});const submit=async e=>{e.preventDefault(); const body=new FormData();Object.entries(data).forEach(([k,v])=>v!==null&&body.append(k,v));const r=await api.post('/profile?_method=PUT',body);save({user:r.data,token:localStorage.getItem('token')});}; return <form onSubmit={submit}><h1>Profile</h1>{['fname','lname','name','email','gender','mobile','alternate_mobile','address','city','pincode'].map(k=><input className="form-control mb-2" key={k} placeholder={k.replace('_',' ')} value={data[k]||''} onChange={e=>setData({...data,[k]:e.target.value})}/>)}<input type="file" className="form-control mb-2" onChange={e=>setData({...data,image:e.target.files[0]})}/><button className="btn btn-primary">Update</button></form>}
 export function MyBookings(){const [rows,setRows]=useState([]);useEffect(()=>{api.get('/bookings').then(r=>setRows(r.data.data));},[]);return <Table rows={rows} columns={['booking_id','trip_name','persons','mobile','price','journey_date','status','trip_id','package_id','user_id']}/>}
 export function AdminCrud({type}){const [rows,setRows]=useState([]),[search,setSearch]=useState(''),[editing,setEditing]=useState(null);const load=()=>api.get(`/admin/${type}`,{params:{search}}).then(r=>setRows(r.data.data));useEffect(load,[]);const remove=async id=>{await api.delete(`/admin/${type}/${id}`);load();};const id=type==='users'?'id':type==='tours'?'t_id':'p_id';const columns=type==='users'?['id','fname','lname','name','email','role_as']:['name','description','places_covered','price'];return <><h1>{type}</h1><input className="form-control mb-2" placeholder="Search" value={search} onChange={e=>setSearch(e.target.value)}/><button className="btn btn-secondary mb-2" onClick={load}>Search</button><Editor type={type} item={editing} done={()=>{setEditing(null);load();}}/><Table rows={rows} columns={columns} actions={row=><><button className="btn btn-sm btn-info me-1" onClick={()=>setEditing(row)}>Edit</button><button className="btn btn-sm btn-danger" onClick={()=>remove(row[id])}>Delete</button></>}/></>}
